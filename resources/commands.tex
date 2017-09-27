@@ -1,0 +1,448 @@
+% دستورات جدید و دستوراتی که برای اصلاح، بازتعریف شدند، در این فایل قرار دارند؛ بنابراین، مشابه با توابع/متد‌های زبان‌های برنامه‌سازی، با فراخوانی نام دستور و پاس دادن پارامترها (دقیقا به تعداد موردنیاز) میتوان از این دستورات استفاده کرد.
+
+\newcommand{\inTheNameOfGod}
+{
+  \begin{center}
+    \vspace*{\fill}
+    \begin{quote}
+      \centering
+      %\nst بسم الله الرّحمن الرّحیم
+      {\shn\fontsize{60}{72}\selectfont بسم الله الرّحمن الرّحیم}
+    \end{quote}
+    \vspace*{\fill}
+  \end{center}
+}
+\newcommand{\blankpage}
+{
+  \pagenumbering{gobble} % صفحه خالی، شماره صفحه ندارد
+  \clearpage
+   \vspace*{\fill}
+     \begin{center}
+       %{\nst\fontsize{4}{5.8}\selectfont[این صفحه آگاهانه خالی گذاشته شده است.]}
+       \textit{\nil\fontsize{12}{14.4}\selectfont \textbf[این صفحه آگاهانه خالی گذاشته شده است.]}
+     \end{center}
+   \vspace*{\fill}
+  \clearpage
+  %\pagenumbering{myabjad} % شماره گزاری بروش ابجد شروع شود
+}
+
+\newcommand{\farpnulogo}[1] % نام واحد / مرکز
+{
+  \clearpage % در شیوه نامه،قسمت جلد فارسی،‌اولین قسمت لوگو دانشگاه است
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{resources/img/pnu_logo-colored.png}
+    \caption*{{\nst\fontsize{4}{4.8}\selectfont \textbf{دانشگاه پیام‌نور}}}
+    {\nst\fontsize{3}{3.6}\selectfont \textbf{#1}}
+    %\mbox{#1}
+    %\label{fig0}
+  \end{figure}
+  \bigskip
+}
+
+\newcommand{\farfieldofstudy}[2] % نام رشته تحصیلی و گرایش
+{
+  \begin{center}
+    {\bn\fontsize{14}{16.8}\selectfont \textbf{\rl{پایان‌نامه کارشناسی‌ارشد رشته #1}}}\\
+    {\bn\fontsize{14}{16.8}\selectfont \textbf{\rl{گرایش: #2}}}
+    \bigskip
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\farthesistitle}[1]
+{
+  \begin{center}
+    {\bn\fontsize{15}{18}\selectfont عنوان پایان‌نامه:}\\
+    {\bn\fontsize{20}{24}\selectfont #1}
+    \bigskip
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\farsupervisor}[1]
+{
+  \begin{center}
+    {\bn\fontsize{14}{16.8}\selectfont استاد راهنما:}\\
+    {\bn\fontsize{16}{19.2}\selectfont \textbf{#1}}
+    \bigskip
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\faradvisor}[1]
+{
+  \begin{center}
+    {\bn\fontsize{14}{16.8}\selectfont استاد مشاور:}\\
+    {\bn\fontsize{16}{19.2}\selectfont \textbf{#1}}
+    \bigskip
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\farauthorofthesis}[1]
+{
+  \begin{center}
+    {\bn\fontsize{14}{16.8}\selectfont نگارنده:}\\
+    {\bn\fontsize{16}{19.2}\selectfont \textbf{#1}}
+    \bigskip
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\fardateofdefence}[1]
+{
+  \begin{center}
+    {\bn\fontsize{14}{16.8}\selectfont \textbf \rl{#1}}
+  \end{center}
+  \clearpage % در شیوه نامه، قسمت جلد فارسی، آخرین قسمت زمان دفاع است
+}
+
+\newcommand{\juryapproval}[1]
+{
+  \centering{\fontsize{15}{18}\selectfont \textbf{\underline{تصویب‌نامه}}}\\
+  \bigskip
+  \centering{\fontsize{12}{14.4}\selectfont {پایان‌نامه کارشناسی‌‌ارشد رشته #1}}\\
+}
+
+\newcommand{\authorofthesisinline}[1]
+{
+  \centering{\fontsize{12}{14.4}\selectfont \rl{#1}}
+}
+
+\newcommand{\thesistitleinline}[1]
+{
+  \flushright{\fontsize{12}{14.4}\selectfont \textbf{تحت عنوان:}}\\
+  \justify{\fontsize{12}{14.4}\selectfont #1}\\
+}
+
+\newcommand{\dateofdefense}[2]
+{
+  %\noindent{\rl{تاریخ دفاع: #1}{\rl{ساعت: #2}}
+  \flushright{\rl{تاریخ دفاع: #1}} \rl{ساعت: #2}\\
+}
+
+\newcommand{\thesisgrade}
+{
+   \bigskip   
+   \centering{\fontsize{12}{14.4}\selectfont {نمره: ..........}}\\
+   \bigskip
+   \centering{\fontsize{12}{14.4}\selectfont {درجه ارزشیابی: ..........}}\\
+}
+
+\newcommand{\examiners}[8]
+{
+  \flushright{\large {هیات داوران:}}
+  \begin{table}[H]
+  \centering
+  \def\arraystretch{1.7}%  horzintal spacing; 1 is the default, change whatever you need
+  \begin{tabular}{|c|c|c|C{4cm}|}
+  \hline
+   \textbf{داوران} & \textbf{نام‌و‌نام‌خانوادگی} & \textbf{مرتبه‌علمی} & \textbf{امضا}\\
+  \hline
+   \rl{\small \textbf{استاد راهنما}} & \rl{\normalsize #1} & \rl{\small #2} & \\
+   \rl{\small \textbf{استاد مشاور}} & \rl{\normalsize #3} & \rl{\small #4} & \\
+   \rl{\small \textbf{استاد داور}} & \rl{\normalsize #5} & \rl{\small #6} & \\
+   \rl{\small \textbf{نماینده تحصیلات تکمیلی}} & \rl{\normalsize #7} & \rl{\small #8} & \\
+  \hline
+  \end{tabular}
+  \end{table}
+  \flushright{\fontsize{12}{14.4}\selectfont {آیا پایان‌نامه مذکور نیاز به اصلاحات دارد؟}}
+}
+
+\newcommand{\commitment}[5]
+{
+  \vspace*{\stretch{1}}
+  \clearpage 
+  \begin{center}
+  {\fontsize{16}{19.2}\selectfont \textbf{تعهد پایان‌نامه}}\\
+  \bigskip
+  \bigskip 
+  \bigskip
+  \justify{اینجانب #1 دانش‌آموخته مقطع کارشناسی‌ارشد ناپیوسته تخصصی در رشته #2 که در تاریخ #3 از پایان‌نامه خود با عنوان #4 با کسب نمره #5 دفاع نموده‌ام، بدینوسیله متعهد می‌شوم:}\\
+  %\bigskip
+  \begin{enumerate}
+\item این پایان‌نامه حاصل تحقیق و پژوهش انجام شده توسط اینجانب بوده و در مواردی که از دستاورد‌های عملی و پژوهش دیگران (اعم از پایان‌نامه، کتاب، مقاله {و...}) استفاده نموده‌ام مطابق ضوابط و رویه موجود، نام منبع مورد استفاده و سایر مشخصات آن را در فهرست مربوط ذکر ودرج کرده‌ام.\\
+  \bigskip
+\item این پایان‌نامه قبلا برای دریافت هیچ مدرک تحصیلی (هم سطح، پایین‌تر یا بالاتر) در سایر دانشگاه‌ها و موسسات آموزش عالی ارائه نشده است.\\
+
+\item چناچه بعد از فراغت از تحصیل،‌ قصد استفاده و هرگونه بهره‌برداری اعم از چاپ مقاله، کتاب، ثبت اختراع {و...} از این پایان‌نامه را داشته باشم، با ذکر نام استادان راهنما و مشاور و درج نام دانشگاه پیام‌نور اقدام خواهم کرد. \\
+
+\item چنانچه در هر مقطع زمانی خلاف موارد فوق ثابت شود، عواقب حقوقی ناشی از آن را می‌پذیرم و همچنین دانشگاه پیام‌نور مجاز است با اینجانب مطابق ضوابط و مقررات رفتار کند و در صورت ابطال مدرک تحصیلی‌ام هیچ گونه ادعایی نخواهم داشت.\\
+  \end{enumerate}
+  \centering\textbf{نام و نام‌خانوادگی}\\
+  \bigskip
+  \centering ....................\\
+  \bigskip\bigskip
+  \centering\textbf{تاریخ و امضا}\\
+  \centering ....................\\
+  \bigskip\bigskip\bigskip\bigskip\bigskip
+  \color{red}\underline{این تعهدنامه باید پس از امضا در متن پایان نامه درج گردد.}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \clearpage 
+}
+
+\newcommand{\engpnulogo}
+{
+  \clearpage % در شیوه نامه،قسمت جلد انگلیسی،‌اولین قسمت لوگو دانشگاه است
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{resources/img/pnu_logo-colored.png}
+    \caption*{{\tnr \fontsize{16}{19.2}\selectfont \textbf{\lr{Payame Noor University}}}}
+  \end{figure}
+  \bigskip
+}
+
+\newcommand{\engdepartment}[2] % نام دانشکده
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{Department of #1}}}
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\enginterest}[1]
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{Thesis Submitted in Partial Fulfillment 
+of the requirement for the Degree of M.Sc In #1}}}
+  \end{center}
+}
+
+\newcommand{\engthesistitle}[1]
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{Title:}}}\\
+    {\tnr \fontsize{20}{24}\selectfont \textbf{\lr{#1}}}
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\engsupervisor}[1]
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{Superviser:}}}\\
+    {\tnr \fontsize{16}{19.2}\selectfont \textbf{\lr{Dr. #1}}}
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\engadvisor}[1]
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{Advisor:}}}\\
+    {\tnr \fontsize{16}{19.2}\selectfont \textbf{\lr{Dr. #1}}}
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\engauthorofthesis}[1]
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{By:}}}\\
+    {\tnr \fontsize{16}{19.2}\selectfont \textbf{\lr{#1}}}
+    \bigskip
+  \end{center}
+}
+
+\newcommand{\engdateofdefence}[1]
+{
+  \begin{center}
+    {\tnr \fontsize{14}{16.8}\selectfont \textbf{\lr{#1}}}
+  \end{center}
+  \clearpage % در شیوه نامه، قسمت جلد فارسی، آخرین قسمت زمان دفاع است
+}
+
+\newcommand{\gratitude}[8]
+{
+   {\bn\fontsize{16}{19.2}\selectfont \textbf{#1}}
+   \bigskip
+   \bigskip\\
+   {\bn\fontsize{16}{19.2}\selectfont {#2}}
+   \bigskip\\
+   {\bn\fontsize{16}{19.2}\selectfont {#3}}
+   \bigskip\\
+   \begin{center}
+      {\nst\fontsize{8}{9.6}\selectfont {#4}}
+   \end{center}
+   \bigskip
+   {\bn\fontsize{16}{19.2}\selectfont {#5}}
+   \bigskip\\
+   \begin{center}
+      {\nst\fontsize{8}{9.6}\selectfont {#6}}
+   \end{center}
+   \bigskip
+   {\bn\fontsize{16}{19.2}\selectfont {#7}}
+   \bigskip
+   \bigskip\\
+   {\bn\fontsize{16}{19.2}\selectfont {#8}}
+   \clearpage
+}
+
+\newcommand{\dedications}[4]
+{
+   \begin{flushright}
+     {\bn \fontsize{20}{24}\selectfont {#1}}\\
+     \bigskip
+     \bigskip
+     {\nst \fontsize{7}{9.8}\selectfont {#2}}\\
+     {\nst \fontsize{7}{9.8}\selectfont {#3}}\\
+     {\nst \fontsize{7}{9.8}\selectfont {#4}}\\
+     \bigskip
+     \clearpage
+   \end{flushright}
+}
+
+\newcommand{\bottomquote}[3]
+{
+   \vspace*{\fill}
+   \begin{flushleft}
+     {\nkh \fontsize{25}{30}\selectfont \mbox{#1}}\\
+     \bigskip
+     {\shn \fontsize{25}{30}\selectfont \mbox{#2}}\\
+     \bigskip
+     {\bn \fontsize{12}{14.2}\selectfont \mbox{#3}}\\
+   \end{flushleft}
+}
+% ================================================================================
+% شماره گزاری ابجد صفحات
+\makeatletter
+\def\@myabjad#1{\ifcase#1\or الف\or ب\or ج\or د\or ه\or
+و\or ز\or ح\or ط\or ی\or ک\or ل\or م\or ن\or س\or ع\or ف\or ص\or غ\or
+ر\or ش\or ت\or ث\
+else\@ctrerr\fi}
+\makeatother
+
+% ================================================================================
+% دستوری برای تعریف واژه‌نامه انگلیسی به فارسی
+\newcommand\englishgloss[2]{#1\dotfill\lr{#2}\\}
+% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی 
+\newcommand\persiangloss[2]{#2\dotfill\lr{#1}\\}
+% ================================================================================
+% استایل و نحوه نمایش خطوط کد سی و سی‌پلاس‌پلاس (در پیوست‌ها)
+
+\lstdefinestyle{customc}
+{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\cnt \fontsize{9}{10.8}\selectfont,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customcpp}
+{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  morekeywords={TEST_F,ASSERT_TRUE,ASSERT_EQ,std::string,std::cin,std::cout,std::ifstream,std::endl},
+%  deletekeywords={#include},
+%  escapeinside={}{}, % باید include و define از کلمات کلیدی مجزا شوند ؟؟
+  showstringspaces=false,
+  basicstyle=\cnt \fontsize{9}{10.8}\selectfont, 
+  keywordstyle=\bfseries\color{Fuchsia}, %NavyBlue رنگ کلمات بعد از
+  commentstyle=\itshape\color{NavyBlue},
+  identifierstyle=\color{ForestGreen},
+  stringstyle=\color{black},
+  numbers=left,
+}
+
+% ================================================================================
+% مطابق با آیین‌نامه، <<فهرست تصاویر>> مناسب نیست؛‌ <<فهرست شکل‌ها و نمودار‌ها>> قابل قبول است
+\renewcommand\listfigurename{فهرست شکل‌ها و نمودارها}  
+% مطابق با آیین‌نامه، <<فهرست جداول>> مناسب نیست؛ <<فهرست جدول‌ها>> قابل قبول است
+\renewcommand\listtablename{فهرست جدول‌ها}
+% مطابق با آیین‌نامه، <<کتاب‌نامه>> مناسب نیست؛ <<فهرست منابع>>‌ جایگزین شد
+\renewcommand\bibname{\rl{فهرست منابع}}
+
+% ================================================================================
+% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+\defpersianfont\nastaliq[Scale=2]{IranNastaliq}
+\defpersianfont\chapternumber[Scale=3]{XB Niloofar}
+
+% دستورهایی برای سفارشی کردن صفحات اول فصل‌ها
+\makeatletter
+\newcommand\mycustomraggedright{%
+ \if@RTL\raggedleft%
+ \else\raggedright%
+ \fi}
+\def\@part[#1]#2{%
+\ifnum \c@secnumdepth >-2\relax
+\refstepcounter{part}%
+\addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+\else
+\addcontentsline{toc}{part}{#1}%
+\fi
+\markboth{}{}%
+{\centering
+\interlinepenalty \@M
+\ifnum \c@secnumdepth >-2\relax
+ \huge\bfseries \partname\nobreakspace\thepart
+\par
+\vskip 20\p@
+\fi
+\Huge\bfseries #2\par}%
+\@endpart}
+\def\@makechapterhead#1{%
+\vspace*{-30\p@}%
+{\parindent \z@ \mycustomraggedright %\@mycustomfont
+\ifnum \c@secnumdepth >\m@ne
+\if@mainmatter
+
+\huge\bfseries \@chapapp\space {\chapternumber\thechapter}
+\par\nobreak
+\vskip 20\p@
+\fi
+\fi
+\interlinepenalty\@M 
+\Huge \bfseries #1\par\nobreak
+\vskip 120\p@
+}}
+\makeatother
+% ================================================================================
+% تغییر قلم عنوان فصل
+%\titleformat{\chapter}[display]
+%{\nil\huge\bfseries}{\chaptertitlename\ \thechapter}{20}{\Huge}
+% ================================================================================
+% http://ctan.org/pkg/amssymb
+% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}% تیک؛ کد سمبل از پی‌دی‌اِف مرجع استخراج شده
+\newcommand{\xmark}{\ding{55}}% زبدر
+% ================================================================================
+\definecolor{LRed}{rgb}{1,.8,.8}
+\definecolor{MRed}{rgb}{1,.6,.6}
+\definecolor{HRed}{rgb}{1,.2,.2}
+
+\definecolor{Black}{rgb}{0,0,0}
+\definecolor{White}{rgb}{255,255,255}
+\definecolor{Red}{rgb}{255,0,0}
+\definecolor{Lime}{rgb}{0,255,0}
+\definecolor{Blue}{rgb}{0,0,255}
+\definecolor{Yellow}{rgb}{255,255,0}
+\definecolor{Cyan}{rgb}{0,255,255}
+\definecolor{Magenta}{rgb}{255,0,255}
+\definecolor{Silver}{rgb}{192,192,192}
+\definecolor{Gray}{rgb}{128,128,128}
+\definecolor{Maroon}{rgb}{128,0,0}
+\definecolor{Olive}{rgb}{128,128,0}
+\definecolor{Green}{rgb}{0,128,0}
+\definecolor{Purple}{rgb}{128,0,128}
+\definecolor{Teal}{rgb}{0,128,128}
+\definecolor{Navy}{rgb}{0,0,128}
+% ================================================================================
+\newcommand\textbox[1]{%
+  \parbox{.333\textwidth}{#1}%
+}
+% ================================================================================
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}

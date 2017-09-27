@@ -1,0 +1,49 @@
+% فایل اصلی پیکربندی؛ بسته‌ها و فونت‌های استفاده شده، عموما در این قسمت قرار می‌گیرد.
+
+\documentclass[a4paper,10pt]{report}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb برای استفاده از سمبل‌ها و کاراکتر‌های خاص
+\usepackage{pifont}% http://ctan.org/pkg/pifont برای استفاده از سمبل‌ها و کاراکتر‌های خاص
+
+\usepackage{lipsum}% برای استفاده از noindent
+
+\usepackage{ragged2e} % برای استفاده از جاستیفای
+\usepackage[nonamebreak,square]{natbib} % استایل منابع به این بسته نیاز دارد
+\usepackage{float} % برای ثابت نگه‌داشتن مکان تصاویر
+\usepackage{titlesec} % برای تغییر فونت عناوین مختلف
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=35mm, includehead=true, includefoot=true]{geometry} % ابعاد
+\usepackage{tabularx} % برای تعریف مجدد بعضی دستورات جدول
+\usepackage{fontspec}
+\usepackage[nottoc]{tocbibind} % نمایش کتابنامه در فهرست؛ اما خود فهرست نباید درفهرست باشد
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[table]{xcolor}% برای رنگ‌های جداول
+\usepackage{listings} % برای حروف چینی کد برنامه‌سازی
+\usepackage{todonotes} % برای ایجاد یادداشت‌های مشابه با استیکی‌نوت
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{hyperref}
+%\usepackage[toc,xindy,acronym,nonumberlist=true]{glossaries}
+
+\usepackage[localise=on,extrafootnotefeatures]{xepersian} % بسته اصلی و الزامی که باید آخرین بسته (در ترتیب استفاده) باشد
+\settextfont[Scale=1.3]{B Lotus} % 13pt %{XB Niloofar} (فونت اصلی؛ (نیلوفر بسیار به لوتوس شبیه است
+\setlatintextfont[Scale=1.1]{Times New Roman} % 11pt main latin font
+% باقی فونت‌های استفاده شده. در جاهایی که شیوه‌نامه، انتخاب فونت را دیکته نکرده، به صورت دلخواه <<فونت تعریف شده>>، در اندازه مورد نیاز، استفاده شد.
+\defpersianfont\nst[Scale=5.0]{IranNastaliq} 
+\defpersianfont\bn[Scale=1.0]{Bahij Nazanin}
+\defpersianfont\nil[Scale=1.0]{XB Niloofar}
+\deflatinfont\tnr[Scale=1.0]{Times New Roman} 
+\deflatinfont\cnt[Scale=1.0]{Cantarell} % مناسب برای نوشتن کد برنامه‌سازی
+\defpersianfont\shn[Scale=1.0]{Shekasteh_Beta} % شکسته نستعلیق
+\defpersianfont\bsm[Scale=1.0]{S 110_Besmellah}
+\defpersianfont\msh[Scale=1.0]{B Mashhad}
+
+\defpersianfont\nkh[Scale=1.0]{Adobe Naskh} % فونت زبان عربی
+\defpersianfont\bst[Scale=1.0]{Bustani} % فونت زبان عربی
+\defpersianfont\din[Scale=1.0]{DINArabic} % فونت زبان عربی
+
+
+\linespread{1.5} % فاصله بین خطوط :‌ معادل با ۱ سانتی متر
+
+\renewcommand\thefigure{\thechapter-\arabic{figure}} % نقطه موجود در نام شکل، با خط تیره جا‌به‌جا شود
+\renewcommand\thetable{\thechapter-\arabic{table}} % نقطه موجود در نام جدول، با خط تیره جابه‌جا شود
+
